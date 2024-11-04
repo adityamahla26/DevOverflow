@@ -1,5 +1,22 @@
+/*Initial setup*/
 npm install eslint-config-standard
 npm install eslint-plugin-tailwindcss
 npm install eslint-config-prettier
 npm install prettier
 npm install eslint-plugin-import --save-dev
+
+
+/*Dark and Light Mode*/
+npm install next-themes
+
+/*To strictly use current version of npm, react and react-dom in package.json*/
+  // "packageManager": "npm@10.2.4",
+  // "overrides": {
+  //   "react": "$react",
+  //   "react-dom": "$react-dom"
+  // }
+
+
+/* Suppress Hydration warning*/
+<html lang="en" suppressHydrationWarning>
+
