@@ -20,3 +20,7 @@ npm install next-themes
 /* Suppress Hydration warning*/
 <html lang="en" suppressHydrationWarning>
 
+
+/*Shadcn for components*/
+npx shadcn@latest init 
+//npx shadcn@latest add dropdown-menu
