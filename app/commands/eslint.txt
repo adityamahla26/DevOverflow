@@ -24,3 +24,4 @@ npm install next-themes
 /*Shadcn for components*/
 npx shadcn@latest init 
 //npx shadcn@latest add dropdown-menu
+//npx shadcn@latest add button
