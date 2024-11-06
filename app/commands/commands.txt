@@ -25,3 +25,19 @@ npm install next-themes
 npx shadcn@latest init 
 //npx shadcn@latest add dropdown-menu
 //npx shadcn@latest add button
+
+/*Setup NextAuth/Auth.js with Github*/
+//npm install next-auth@beta
+//npx auth secret
+
+/*Shadcn for notification*/
+//npx shadcn@latest add toast
+
+/*Enterprise level tactic to put routes in constants*/
+const ROUTES = {
+//  HOME: "/",
+//  SIGN_IN: "/sign-in",
+//  SIGN_UP: "/sign-up",
+//};
+
+//export default ROUTES;
