@@ -18,7 +18,7 @@ const SocialAuthForm = () => {
     } catch (error) {
       console.log(error);
       toast({
-        title: "Sign-in falied",
+        title: "Sign-in failed",
         description:
           error instanceof Error
             ? error.message

@@ -43,3 +43,7 @@ const ROUTES = {
 
 /*Google Authentication*/
 console.cloud.google.com
+
+/*Authentication form*/
+//npx shadcn@latest add form
+//npx shadcn@latest add input
