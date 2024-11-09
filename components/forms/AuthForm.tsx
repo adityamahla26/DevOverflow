@@ -25,14 +25,14 @@ import ROUTES from "@/constants/routes";
 interface AuthFormProps<T extends FieldValues> {
   schema: ZodType<T>;
   defaultValues: T;
-  onSubmit: (data: T) => Promise<{ success: boolean }>;
+  onSubmit: (data: T) => Promise<{ success: boolean; data: T }>;
   formType: "SIGN_IN" | "SIGN_UP";
 }
 const AuthForm = <T extends FieldValues>({
-  formType,
   schema,
   defaultValues,
   onSubmit,
+  formType,
 }: AuthFormProps<T>) => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof schema>>({
