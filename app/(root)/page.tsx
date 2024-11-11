@@ -5,7 +5,7 @@ import ROUTES from "@/constants/routes";
 const Home = async () => {
   const session = await auth();
   console.log(session);
-  return <></>;
+  return <>I am in root.</>;
 };
 
 export default Home;

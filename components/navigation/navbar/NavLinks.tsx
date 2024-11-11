@@ -29,7 +29,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
               isActive
                 ? "primary-gradient rounded-lg text-light-900"
                 : "text-dark300_light900",
-              "flex items-center justify-start gap-4 bg-transparent p-2"
+              "flex items-center justify-start gap-4 bg-transparent p-3"
             )}
           >
             <Image
@@ -43,7 +43,7 @@ const NavLinks = ({ isMobileNav = false }: { isMobileNav?: boolean }) => {
             <p
               className={cn(
                 isActive ? "base-bold" : "base-medium",
-                !isMobileNav && "block xl:hidden"
+                !isMobileNav && "max-lg:hidden"
               )}
             >
               {item.label}
