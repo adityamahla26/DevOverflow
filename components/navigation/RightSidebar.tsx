@@ -3,6 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 import ROUTES from "@/constants/routes";
+
 import TagCard from "../cards/TagCard";
 
 const hotQuestions = [
