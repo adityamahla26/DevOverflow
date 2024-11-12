@@ -51,3 +51,11 @@ console.cloud.google.com
 
 /*Left side bar*/
 //npx shadcn@latest add sheet
+
+/*Language badge for Right sidebar*/
+//npx shadcn@latest add badge
+
+/*Devicon*/
+//Place this link in <head></head> in 1st layout file
+            <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+          
