@@ -59,3 +59,6 @@ console.cloud.google.com
 //Place this link in <head></head> in 1st layout file
             <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
           
+
+/*To parse and stringify url string*/
+//npm install query-string
