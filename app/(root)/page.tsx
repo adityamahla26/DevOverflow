@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { auth, signOut } from "@/auth";
+import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
@@ -10,7 +11,7 @@ const questions = [
     _id: "1",
     title: "How to make a custom hook in React?",
     description: "Learn React",
-    tag: [{ _id: "1", name: "React" }],
+    tags: [{ _id: "1", name: "React" }],
     author: { _id: "1", name: "A" },
     upvotes: 10,
     answers: 5,
@@ -21,7 +22,7 @@ const questions = [
     _id: "2",
     title: "How to use React Query?",
     description: "Learn React",
-    tag: [{ _id: "2", name: "React Query" }],
+    tags: [{ _id: "2", name: "React Query" }],
     author: { _id: "2", name: "B" },
     upvotes: 10,
     answers: 5,
@@ -32,7 +33,7 @@ const questions = [
     _id: "3",
     title: "How to use Redux?",
     description: "Learn React",
-    tag: [{ _id: "3", name: "Redux" }],
+    tags: [{ _id: "3", name: "Redux" }],
     author: { _id: "3", name: "B" },
     upvotes: 10,
     answers: 5,
@@ -43,7 +44,7 @@ const questions = [
     _id: "4",
     title: "How to use React Router?",
     description: "Learn React",
-    tag: [{ _id: "4", name: "React Rooter" }],
+    tags: [{ _id: "4", name: "React Rooter" }],
     author: { _id: "4", name: "B" },
     upvotes: 10,
     answers: 5,
@@ -54,7 +55,7 @@ const questions = [
     _id: "5",
     title: "How to use React Context?",
     description: "Learn React",
-    tag: [{ _id: "5", name: "React Context" }],
+    tags: [{ _id: "5", name: "React Context" }],
     author: { _id: "5", name: "B" },
     upvotes: 10,
     answers: 5,
@@ -71,10 +72,17 @@ const Home = async ({ searchParams }: SearchParams) => {
   const session = await auth();
   console.log(session);
 
-  const { query = "" } = await searchParams;
-  const filteredQuestions = questions.filter((question) =>
-    question.title.toLowerCase().includes(query?.toLowerCase())
-  );
+  const { query = "", filter = "" } = await searchParams;
+
+  const filteredQuestions = questions.filter((question) => {
+    const matchedQuery = question.title
+      .toLowerCase()
+      .includes(query?.toLowerCase());
+    const matchesFilter = filter
+      ? question.tags[0].name.toLowerCase() === filter.toLowerCase()
+      : true;
+    return matchedQuery && matchesFilter;
+  });
 
   return (
     <>
@@ -95,7 +103,7 @@ const Home = async ({ searchParams }: SearchParams) => {
           otherClasses="flex-1"
         />
       </section>
-      HomeFilter
+      <HomeFilter />
       <div className="mt-10 flex w-full flex-col gap-6">
         {filteredQuestions.map((question) => (
           <h1 key={question._id}>{question.title}</h1>
