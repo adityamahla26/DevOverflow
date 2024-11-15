@@ -62,3 +62,36 @@ console.cloud.google.com
 
 /*To parse and stringify url string*/
 //npm install query-string
+
+
+
+/*To make eslint.json work with typescript when defining global interfaces*/
+
+//"overrides": [
+//    {
+//      "files": ["*.ts", "*.tsx"],
+//      "rules": {
+//        "no-undef": "off"
+//      }
+//    }
+//]
+
+
+/*Configuration of next.config.ts*/
+
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   /* config options here */
+//   images: {
+//     remotePatterns: [
+//       {
+//         protocol: "https",
+//         hostname: "static.vecteezy.com",
+//         port: "",
+//       },
+//     ],
+//   },
+// };
+
+// export default nextConfig;
