@@ -95,3 +95,16 @@ console.cloud.google.com
 // };
 
 // export default nextConfig;
+
+
+/*MDXEditor for Question Form*/
+
+// npm install --save @mdxeditor/editor
+
+/*To install tailwindcss prose class*/
+//npm install -D @tailwindcss/typography
+//Configure tailwind.config.ts under plugins
+// require("@tailwindcss/typography")
+
+/*For codeBlock*/
+//npm install cm6-theme-basic-dark
