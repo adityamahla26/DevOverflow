@@ -108,3 +108,7 @@ console.cloud.google.com
 
 /*For codeBlock*/
 //npm install cm6-theme-basic-dark
+
+/*MongoDB VS code*/
+//Install extension to get access to MongoDB database that is deployed on the cloud using MongoDB Atlas
+//Mongoose - npm install mongoose
