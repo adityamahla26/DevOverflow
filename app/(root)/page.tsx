@@ -6,6 +6,13 @@ import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+import handleError from "@/lib/handlers/error";
+import {
+  NotFoundError,
+  RequestError,
+  ValidationError,
+  ForbiddenError,
+} from "@/lib/http-errors";
 
 const questions = [
   {
@@ -111,6 +118,8 @@ interface SearchParams {
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
+  const result = await test();
+  console.log(result);
   const session = await auth();
   console.log(session);
 
@@ -157,6 +166,7 @@ const Home = async ({ searchParams }: SearchParams) => {
 
 export default Home;
 
+// sign-out demo
 /* { <div className="px-10 pt-[100px] ">DevOverflow</div>
       <form
         className="px-10 pt-[100px]"
@@ -167,3 +177,12 @@ export default Home;
       >
         <Button type="submit">Sign out</Button>
       </form> } */
+
+// error handle demo
+/* const test = async () => {
+  try {
+    throw new ValidationError({ element: ["notFound"], email: ["Required"] });
+  } catch (error) {
+    return handleError(error);
+  }
+}; */
