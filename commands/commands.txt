@@ -112,3 +112,7 @@ console.cloud.google.com
 /*MongoDB VS code*/
 //Install extension to get access to MongoDB database that is deployed on the cloud using MongoDB Atlas
 //Mongoose - npm install mongoose
+
+/*For logging*/
+//npm i pino
+//npm i pino-pretty (For more readable formats of logs that are transformed from json formats)

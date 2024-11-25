@@ -13,6 +13,7 @@ import {
   ValidationError,
   ForbiddenError,
 } from "@/lib/http-errors";
+import dbConnect from "@/lib/mongoose";
 
 const questions = [
   {
@@ -113,13 +114,23 @@ const questions = [
   },
 ];
 
+const test = async () => {
+  try {
+    // await dbConnect();
+    // throw new Error("Test Error");
+    throw new ValidationError({ element: ["notFound"], email: ["Required"] });
+  } catch (error) {
+    return handleError(error);
+  }
+};
+
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
-  const result = await test();
-  console.log(result);
+  await test();
+
   const session = await auth();
   console.log(session);
 
